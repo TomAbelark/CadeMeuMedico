@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+<!--Saudações tela Principal-->
+@helper Saudacoes()
+{
+    
+        var Data = DateTime.Now.DayOfWeek;
+        string StringConcatenada = Data.ToString();
+   
+        <!-- Verificando o dia retornado -->
+        if (StringConcatenada == "Sunday"){<h2>Hoje é Domingo. Seja bem vindo(a)!</h2>}
+        if (StringConcatenada == "Monday"){<h2>Hoje é Segunda-Feira. Seja bem vindo(a)!</h2>}
+        if (StringConcatenada == "Tuesday"){<h2>Hoje é Terça-Feira. Seja bem vindo(a)!</h2>}
+        if (StringConcatenada == "Wednesday"){<h2>Hoje é Quarta-Feira. Seja bem vindo(a)!</h2>}
+        if (StringConcatenada == "Thursday"){<h2>Hoje é Quinta-Feira. Seja bem vindo(a)!</h2>}
+        if (StringConcatenada == "Friday"){<h2>Hoje é Sexta-Feira. Seja bem vindo(a)!</h2>}
+        if (StringConcatenada == "Saturday"){<h2>Hoje é Sábado. Seja bem vindo(a)!</h2>}
+}
+
+<!--Busca Banner Publicitario-->
+@using CadeMeuMedico.Models;
+
+@using CadeMeuMedico;
+
+@helper RetornaDoisBannersMaisRecentes()
+{
+var bd = new CadeMeuMedico.Models.CadeMeuMedicoBDEntities1();
+var banners = bd.BannersPublicitarios.OrderByDescending(b => b.IDBanner).Take(2);
+    <div style="width:100%; text-align:left; border:1px solid #efefef; padding:10px; display:inline-block;">
+        @foreach (var b in banners)
+        {
+            <div style="width:125px; height:125px;float:left; margin-right:10px;">
+                <a href="@b.LinkBanner">
+                    <img src="~/App_Data/Uploads/Banners/@b.BannerCampanha" title="@b.TituloCampanha"/>
+                </a>
+            </div>
+        }
+
+    </div>
+}

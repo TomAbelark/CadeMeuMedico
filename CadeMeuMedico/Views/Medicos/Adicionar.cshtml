@@ -1,0 +1,115 @@
+﻿@model CadeMeuMedico.Models.Medicos
+
+@{
+    ViewBag.Title = "Adicionar";
+}
+
+<h2>Adicionar</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Medicos</h4>
+        <hr>
+        
+        <div class="form-group">
+            <label class="control-label col-md-2" for="CRM">CRM</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="CRM" name="CRM" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="CRM" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Nome">Nome</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Nome" name="Nome" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Nome" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Endereco">Endereco</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Endereco" name="Endereco" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Endereco" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Bairro">Bairro</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Bairro" name="Bairro" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Bairro" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Email">Email</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Email" name="Email" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="AtendePorConvenio">AtendePorConvenio</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    <input class="check-box" data-val="true" data-val-required="O campo AtendePorConvenio é obrigatório." id="AtendePorConvenio" name="AtendePorConvenio" type="checkbox" value="true"><input name="AtendePorConvenio" type="hidden" value="false">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="AtendePorConvenio" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="TemClinica">TemClinica</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    <input class="check-box" data-val="true" data-val-required="O campo TemClinica é obrigatório." id="TemClinica" name="TemClinica" type="checkbox" value="true"><input name="TemClinica" type="hidden" value="false">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="TemClinica" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="WebsiteBlog">WebsiteBlog</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="WebsiteBlog" name="WebsiteBlog" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="WebsiteBlog" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IDCidade">IDCidade</label>
+            <div class="col-md-10">
+                <select class="form-control" id="IDCidade" name="IDCidade"><option value="1">Blumenau</option>
+<option value="2">São José do Rio Preto</option>
+</select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="IDCidade" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IDEspecialidade">IDEspecialidade</label>
+            <div class="col-md-10">
+                <select class="form-control" id="IDEspecialidade" name="IDEspecialidade"><option value="1">Cardiologista</option>
+<option value="2">Neurologista</option>
+</select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="IDEspecialidade" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Adicionar" class="btn btn-default">
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
